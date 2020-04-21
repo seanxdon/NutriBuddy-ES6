@@ -4,11 +4,19 @@
 
 class Food {
     constructor(item, calories, protein, carb, fat) {
-        this.item = item;
-        this.calories = calories;
-        this.protein = protein;
-        this.carb = carb;
-        this.fat = fat;
+      this.item = item;
+      this.calories = calories;
+      this.protein = protein;
+      this.carb = carb;
+      this.fat = fat;
+    }
+    totalCalories() {
+      let calories = 0;
+      food.forEach(el => {
+        calories += this.calories[i];
+      }
+      )
+      console.log(this.totalCalories());
     }
 }
 //---------------------------------------------------------
@@ -18,8 +26,10 @@ class Food {
 class UI {
     static displayFood() {
         const foods = Store.getFoods();
-        foods.forEach((food) => UI.addFoodToList(food));       
+        foods.forEach((food) => UI.addFoodToList(food));    
+        // foods.forEach((food) => UI.addFoodTotals(food));  
     }
+
     static addFoodToList(food) {
         const list = document.querySelector('#food-list');
         const row = document.createElement('tr');
@@ -35,7 +45,21 @@ class UI {
 
         list.appendChild(row);
     }
-    
+    static addFoodTotals(food) {
+      const list = document.querySelector('#total-list');
+      const row = document.createElement('tr');
+
+      row.innerHTML = `
+      <td>${food.totalCalories}</td>
+      <td>${food.totalProtein}</td>
+      <td>${food.totalCarb}</td>
+      <td>${food.totalFat}</td>
+      <td><a href='#' class='btn btn-danger btn-sm delete'>X</a></td>
+      `;
+
+      list.appendChild(row);
+  }
+
     static deleteFood(el) {
         //if class list contains delete,
         //select the parent, then the parent of that parent and remove it
@@ -127,7 +151,7 @@ document.querySelector('#food-form').addEventListener('submit', (e) => {
     } else {
         //Set food values to constructor
         const food = new Food(item, calories, protein, carb, fat);
-
+        
         //Add food to UI
         UI.addFoodToList(food);
 
@@ -139,9 +163,11 @@ document.querySelector('#food-form').addEventListener('submit', (e) => {
 
         //Clear input fields after something is submitted
         UI.clearFields();
+        console.log(food);
     }
-});
 
+});
+  
 //-------------------------------------------------------
 // --------------- Event: Remove Food -------------------
 //-------------------------------------------------------
