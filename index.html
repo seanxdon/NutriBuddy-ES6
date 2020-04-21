@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+    <title>My Nutrition App</title>
+</head>
+<body>
+
+    <div class="container mt-4"> 
+        <h1 class="display-4 text-center"><i class="fab fa-nutritionix text-primary"></i> My <span class="text-primary">Nutrition </span>App</h1>
+            <form action="" id="food-form">
+                <div class="form-group">
+                    <label for="item">Item</label>
+                    <input type="text" id="item" class='form-control'>
+                </div>
+                <div class="form-group">
+                    <label for="calories">Calories</label>
+                    <input type="text"  min="0" max="9999" id="calories" class='form-control'>
+                </div>
+                <div class="form-group">
+                    <label for="protein">Protein (g)</label>
+                    <input type="number" min="0" max="999" id="protein" class='form-control'>
+                </div>
+                <div class="form-group">
+                    <label for="carb">Carbs (g)</label>
+                    <input type="number" min="0" max="999"id="carb" class='form-control'>
+                </div>
+                <div class="form-group">
+                    <label for="fat">Fats (g)</label>
+                    <input type="number" min="0" max="999" id="fat" class='form-control'>
+                </div>
+                <input type="submit" value='Add Item' class="btn btn-primary btn-block">
+            </form>
+            <table class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Calories</th>
+                        <th>Protein (g)</th>
+                        <th>Carbs (g)</th>
+                        <th>Fat (g)</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="food-list"></tbody>                
+                <br>
+                <table class="table table-striped mt-5">
+                    <thead>
+                        <tr>
+                            <th>Total Calories</th>
+                            <th>Total Protein (g)</th>
+                            <th>Total Carbs (g)</th>
+                            <th>Total Fat (g)</th>                         
+                        </tr>
+                    </thead>
+                    <tbody id="totals-list"></tbody>
+            </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

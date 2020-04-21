@@ -1,2 +1,2 @@
 # NutriBuddy-ES6
-Nutrition calculator using ES6 
+Nutrition Calculator using ES6
