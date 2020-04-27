@@ -10,15 +10,8 @@ class Food {
       this.carb = carb;
       this.fat = fat;
     }
-    totalCalories() {
-      let calories = 0;
-      food.forEach(el => {
-        calories += this.calories[i];
-      }
-      )
-      console.log(this.totalCalories());
-    }
 }
+
 //---------------------------------------------------------
 // --------------- UI Class: handle UI Tasks --------------
 //---------------------------------------------------------
